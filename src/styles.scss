@@ -5,6 +5,7 @@
   --dark-color: #000000;
   --light-color: #ffffff;
   --primary-color: #ae7aff;
+  --gray-color: #5f646d;
 }
 
 *,
@@ -19,6 +20,8 @@ body {
   font-family: "JetBrains Mono", "sans-serif";
   background-color: var(--dark-color);
   color: var(--light-color);
+  background-image: url("/assets/imgs/background.jpg");
+  background-size: cover;
 }
 
 .skill-tag {
@@ -50,6 +53,22 @@ body {
   font-weight: 700;
   height: 44px;
 }
+.btn-shadow {
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    right: -4px;
+    background: var(--gray-color);
+  }
+}
+
+.h1 {
+  font-size: 48px;
+  line-height: 56px;
+  font-weight: 800;
+}
 
 .h6 {
   font-size: 18px;
@@ -60,4 +79,16 @@ body {
 .subtitle {
   font-size: 14px;
   line-height: 20px;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+.mb-32 {
+  margin-bottom: 32px;
+}
+
+.mb-60 {
+  margin-bottom: 60px;
 }
