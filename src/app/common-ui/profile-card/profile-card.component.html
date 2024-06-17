@@ -1,8 +1,8 @@
 <div class="profile-card">
   <div class="avatar-name">
     <img
-      [src]="imgUrl + profile?.avatarUrl"
-      alt="avatart"
+      [src]="profile?.avatarUrl | imgUrl"
+      [alt]="profile?.firstName"
       class="profile-card-avatar"
     />
     <div class="profile-card-name">

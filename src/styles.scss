@@ -7,7 +7,9 @@
   --primary-color: #ae7aff;
 }
 
-* {
+*,
+*:after,
+*:before {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
