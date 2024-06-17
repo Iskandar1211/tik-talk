@@ -1,24 +1,24 @@
 <div class="profile-card">
   <div class="avatar-name">
-    <img src="/assets/img.png" alt="avatart" class="profile-card-avatar" />
+    <img
+      [src]="imgUrl + profile?.avatarUrl"
+      alt="avatart"
+      class="profile-card-avatar"
+    />
     <div class="profile-card-name">
-      <strong class="h6">Райан Гослинг</strong>
-      <p class="subtitle">ryan.gosling</p>
+      <strong class="h6"
+        >{{ profile?.firstName }} {{ profile?.lastName }}</strong
+      >
+      <p class="subtitle">{{ profile?.username }}</p>
     </div>
   </div>
   <div class="profile-card-description">
-    Список навыков, который мы обсудили выше, — основа резюме,
-    но не единственная его часть. Также можно рассказать о себе в классическом
-    смысле — этот раздел можно добавить в сопроводительное письмо.
+    {{ profile?.description }}
   </div>
   <div class="profile-card-tags">
-    <div class="skill-tag-active">JS</div>
-    <div class="skill-tag-active">CSS</div>
-    <div class="skill-tag">HTML</div>
-    <div class="skill-tag">Angular</div>
-    <div class="skill-tag">Frontend</div>
-    <div class="skill-tag">Frontend</div>
-    <div class="skill-tag">Frontend</div>
+    @for (tag of profile?.stack; track tag) {
+    <div class="skill-tag">{{ tag }}</div>
+    }
   </div>
   <div class="profile-card-action-btns">
     <div class="user-check">
