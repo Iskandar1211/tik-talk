@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { AuthService } from '../../auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -21,6 +22,7 @@ export class LoginPageComponent {
   });
 
   authService = inject(AuthService);
+  router = inject(Router);
 
   onSubmit() {
     const { username, password } = this.form.value;
@@ -29,6 +31,8 @@ export class LoginPageComponent {
     this.authService
       //@ts-ignore
       .onLogin({ username, password })
-      ?.subscribe((data) => console.log('data', data));
+      .subscribe((data) => {
+        this.router.navigate(['']);
+      });
   }
 }

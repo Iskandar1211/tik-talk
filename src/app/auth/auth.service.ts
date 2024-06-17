@@ -13,7 +13,11 @@ export class AuthService {
   token: string | null = null;
   refreshToken: string | null = null;
 
-  get isAuth() {
+  isAuth() {
+    if (!this.token) {
+      const token = localStorage.getItem('token');
+      return !!token;
+    }
     return !!this.token;
   }
 
@@ -24,8 +28,8 @@ export class AuthService {
 
     return this.http.post<TokenResponse>(`${this.baseApiUrl}token`, fd).pipe(
       tap((data) => {
-        this.token = data.access_token;
-        this.refreshToken = data.refresh_token;
+        localStorage.setItem('token', data.access_token);
+        localStorage.setItem('refreshToken', data.refresh_token);
       })
     );
   }
