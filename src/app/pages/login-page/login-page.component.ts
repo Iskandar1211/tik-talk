@@ -26,7 +26,6 @@ export class LoginPageComponent {
 
   onSubmit() {
     const { username, password } = this.form.value;
-    console.log('username', username);
 
     this.authService
       //@ts-ignore

@@ -16,6 +16,7 @@ export class AuthService {
   isAuth() {
     if (!this.token) {
       const token = localStorage.getItem('token');
+      this.token = token;
       return !!token;
     }
     return !!this.token;
