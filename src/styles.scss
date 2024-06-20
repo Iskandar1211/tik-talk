@@ -1,11 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 @import "fonts.scss";
+@import "margins.scss";
 
 :root {
   --dark-color: #000000;
   --light-color: #ffffff;
   --primary-color: #ae7aff;
   --gray-color: #5f646d;
+  --dark-hover-color: #161616;
 }
 
 *,
@@ -80,16 +82,4 @@ body {
 .subtitle {
   font-size: 14px;
   line-height: 20px;
-}
-
-.mb-16 {
-  margin-bottom: 16px;
-}
-
-.mb-32 {
-  margin-bottom: 32px;
-}
-
-.mb-60 {
-  margin-bottom: 60px;
 }
