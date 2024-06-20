@@ -18,9 +18,9 @@ export class AuthService {
   isAuth() {
     if (!this.token) {
       const token = localStorage.getItem('token');
-      const refreshToken = localStorage.getItem('refreshToken');
       this.token = token;
-      return !!token;
+      const refreshToken = localStorage.getItem('refreshToken');
+      this.refreshToken = refreshToken;
     }
     return !!this.token;
   }

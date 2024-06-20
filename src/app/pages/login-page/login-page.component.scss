@@ -23,12 +23,20 @@
     border: 1px solid #fff;
     color: var(--light-color);
     border-radius: 4px;
+    outline: none;
   }
   > img {
     position: absolute;
     right: 10px;
     bottom: 10px;
     cursor: pointer;
+  }
+  > .icon {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    cursor: pointer;
+    display: flex;
   }
 }
 
@@ -45,3 +53,4 @@
   cursor: pointer;
   border: none;
 }
+
