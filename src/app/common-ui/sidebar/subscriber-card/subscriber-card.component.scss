@@ -1,0 +1,13 @@
+:host {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  grid-gap: 12px;
+  padding: 8px 0;
+  align-items: center;
+}
+
+.subscriber-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}

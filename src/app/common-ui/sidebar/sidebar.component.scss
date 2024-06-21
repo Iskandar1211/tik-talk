@@ -38,3 +38,21 @@
     text-align: start;
   }
 }
+
+.to-subscribers {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+}
+
+.to-subscribers-link {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.to-subscribers-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--primary-color);
+}
