@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 32px;
+  margin-bottom: 8px;
 }
 .avatar-name {
   display: flex;
