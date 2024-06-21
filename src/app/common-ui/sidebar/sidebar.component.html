@@ -7,10 +7,12 @@
 <nav>
   <ul class="main-menu-list">
     <li>
+      @for (menuItem of menuItems; track menuItem.label) {
       <button class="menu-item">
-        <svg icon="home"></svg>
- 
+        <svg [icon]="menuItem.icon"></svg>
+        <span>{{ menuItem.label }}</span>
       </button>
+      }
     </li>
   </ul>
 </nav>

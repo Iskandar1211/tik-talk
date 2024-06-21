@@ -14,21 +14,27 @@
   cursor: pointer;
   border: none;
   background: none;
+  border-radius: 2px;
+  width: 100%;
   color: #fff;
   display: grid;
   grid-template-columns: 16px 1fr max-content;
   grid-gap: 12px;
-
+  align-items: center;
   &:hover,
   &:focus-visible {
     background: var(--dark-hover-color);
+    color: var(--primary-color);
   }
-  .menu-item svg {
-    color: var(--light-color);
-  }
-}
 
-.menu-item svg {
-  height: 16px;
-  width: 16px;
+  & > svg {
+    width: 16px;
+    height: 16px;
+  }
+  & > span {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: bold;
+    text-align: start;
+  }
 }
