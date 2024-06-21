@@ -4,6 +4,9 @@ import { SubscriberCardComponent } from './subscriber-card/subscriber-card.compo
 import { RouterLink } from '@angular/router';
 import { ProfileService } from '../../data/services/profile.service';
 import { AsyncPipe, JsonPipe } from '@angular/common';
+import { Observable, Observer, firstValueFrom } from 'rxjs';
+import { Profile } from '../../data/services/interfaces/profile.interface';
+import { ImgUrlPipe } from '../../helpers/pipes/img-url.pipe';
 
 type MenuItems = {
   label: string;
@@ -16,12 +19,19 @@ type MenuItems = {
   standalone: true,
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
-  imports: [SvgIconComponent, SubscriberCardComponent, RouterLink, AsyncPipe, JsonPipe],
+  imports: [
+    SvgIconComponent,
+    SubscriberCardComponent,
+    RouterLink,
+    AsyncPipe,
+    JsonPipe,
+    ImgUrlPipe,
+  ],
 })
 export class SidebarComponent {
   profileService = inject(ProfileService);
-
-  subscribers$ = this.profileService.getSubscribersShortList()
+  subscribers$ = this.profileService.getSubscribersShortList();
+  me = this.profileService.me;
 
   menuItems: MenuItems[] = [
     {
@@ -40,4 +50,8 @@ export class SidebarComponent {
       link: '/search',
     },
   ];
+
+  ngOnInit() {
+    firstValueFrom(this.profileService.getMe());
+  }
 }

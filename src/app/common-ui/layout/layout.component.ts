@@ -10,12 +10,4 @@ import { ProfileService } from '../../data/services/profile.service';
   styleUrl: './layout.component.scss',
   imports: [RouterOutlet, SidebarComponent],
 })
-export class LayoutComponent {
-  profileService = inject(ProfileService);
-
-  ngOnInit() {
-    this.profileService.getMe().subscribe((profile) => {
-      console.log(profile);
-    });
-  }
-}
+export class LayoutComponent {}

@@ -1,5 +1,7 @@
 :host {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 20px 12px;
 }
 
@@ -54,5 +56,37 @@
 .to-subscribers-icon {
   width: 18px;
   height: 18px;
+  color: var(--primary-color);
+}
+
+.sidebar-footer {
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  background-color: #161616;
+  justify-content: space-between;
+  > a > svg {
+    width: 14px;
+    height: 14px;
+    color: var(--primary-color);
+  }
+}
+
+.sidebar-footer-image-login-block {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.sidebar-footer-image {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.sidebar-footer-login {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
   color: var(--primary-color);
 }

@@ -1,33 +1,55 @@
-<img
-  src="/assets/svg/Logo-Tik-Talk.svg"
-  alt="Logo-Tik-Talk"
-  class="ml-16 mb-20"
-/>
+<div>
+  <img
+    src="/assets/svg/Logo-Tik-Talk.svg"
+    alt="Logo-Tik-Talk"
+    class="ml-16 mb-20"
+  />
 
-<nav>
-  <ul class="main-menu-list">
-    <li>
-      @for (menuItem of menuItems; track menuItem.label) {
-      <button class="menu-item">
-        <svg [icon]="menuItem.icon"></svg>
-        <span>{{ menuItem.label }}</span>
-      </button>
-      }
-    </li>
-  </ul>
-</nav>
+  <nav>
+    <ul class="main-menu-list">
+      <li>
+        @for (menuItem of menuItems; track menuItem.label) {
+        <button class="menu-item">
+          <svg [icon]="menuItem.icon"></svg>
+          <span>{{ menuItem.label }}</span>
+        </button>
+        }
+      </li>
+    </ul>
+  </nav>
 
-<p class="medium-text mb-20">Подписчики</p>
+  <p class="medium-text mb-20">Подписчики</p>
 
-<div class="mb-20">
-  @for (profile of subscribers$ | async; track profile.id) {
-  <app-subscriber-card [profile]="profile"></app-subscriber-card>
+  <div class="mb-20">
+    @for (profile of subscribers$ | async; track profile.id) {
+    <app-subscriber-card [profile]="profile"></app-subscriber-card>
+    }
+  </div>
+
+  <div class="mt-20 to-subscribers">
+    <a [routerLink]="['/subscribers']" class="to-subscribers-link medium-text"
+      >Все подписчики</a
+    >
+    <svg icon="arrow" class="to-subscribers-icon"></svg>
+  </div>
+</div>
+
+<footer class="sidebar-footer">
+  @if(me(); as me){
+  <div class="sidebar-footer-image-login-block">
+    @if (me.avatarUrl) {
+    <img [src]="me.avatarUrl | imgUrl" alt="" class="sidebar-footer-image" />
+    }@else {
+    <img
+      src="/assets/imgs/user-default.png"
+      alt="img"
+      class="sidebar-footer-image"
+    />
+    }
+    <span class="sidebar-footer-login">{{ me.username }}</span>
+  </div>
+  <a [routerLink]="['/settings']">
+    <svg icon="settings"></svg>
+  </a>
   }
-</div>
-
-<div class="mt-20 to-subscribers">
-  <a [routerLink]="['/subscribers']" class="to-subscribers-link medium-text"
-    >Все подписчики</a
-  >
-  <svg icon="arrow" class="to-subscribers-icon"></svg>
-</div>
+</footer>
