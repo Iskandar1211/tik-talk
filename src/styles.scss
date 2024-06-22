@@ -74,6 +74,13 @@ body {
   font-weight: 800;
 }
 
+.h4 {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 32pxx;
+}
+
 .h6 {
   font-size: 18px;
   line-height: 24px;
@@ -82,5 +89,12 @@ body {
 
 .subtitle {
   font-size: 14px;
+  line-height: 20px;
+}
+
+.regular {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
   line-height: 20px;
 }
