@@ -1,0 +1,39 @@
+:host {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  grid-gap: 48px;
+  padding: 24px;
+}
+
+.border-bottom-dashed {
+  border-bottom: 1px dashed white;
+}
+.skill-title {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 24px;
+}
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 16px;
+}
+
+.description-container {
+}
+.description-title {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 24px;
+}
+
+.description {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+}
+.right-profile-contatiner {
+  background-color: var(--dark-color);
+  
+}

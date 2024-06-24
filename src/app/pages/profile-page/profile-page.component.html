@@ -1,3 +1,28 @@
-@if(profile$ | async; as profile) {
-<app-profile-header [profile]="profile"></app-profile-header>
-}
+<div>
+  @if(profile$ | async; as profile) {
+  <app-profile-header [profile]="profile"></app-profile-header>
+  <div class="border-bottom-dashed mt-32 mb-32"></div>
+  <div class="mb-32">
+    <span class="skill-title">Навыки</span>
+    {{ profile.stack }}
+    <div class="skills-container">
+      @for (skill of stacks; track skill) {
+      <span class="skill-tag">{{ skill }}</span>
+      }
+    </div>
+  </div>
+  <div class="description-container">
+    <div class="description-title mb-16">О себе</div>
+    <div class="description">
+      {{
+        profile.description
+          ? profile.description
+          : "Список навыков, который мы обсудили выше, — основа резюме, но не единственная его часть. Также можно рассказать о себе в классическом смысле — этот раздел можно добавить в сопроводительное письмо."
+      }}
+    </div>
+  </div>
+  }
+</div>
+<div class="right-profile-contatiner">
+  <app-cusotom-input label="Имя" formControlName="name" placeholder="Имя" />
+</div>
