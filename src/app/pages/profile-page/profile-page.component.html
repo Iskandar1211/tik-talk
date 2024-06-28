@@ -1,28 +1,44 @@
-<div>
-  @if(profile$ | async; as profile) {
-  <app-profile-header [profile]="profile"></app-profile-header>
-  <div class="border-bottom-dashed mt-32 mb-32"></div>
-  <div class="mb-32">
-    <span class="skill-title">Навыки</span>
-    {{ profile.stack }}
-    <div class="skills-container">
-      @for (skill of stacks; track skill) {
-      <span class="skill-tag">{{ skill }}</span>
-      }
+@if (profile$ | async; as profile) {
+  <div>
+
+    <app-profile-header [profile]="profile"></app-profile-header>
+    <div class="border-bottom-dashed mt-32 mb-32"></div>
+    <div class="mb-32">
+      <span class="skill-title">Навыки</span>
+      {{ profile.stack }}
+      <div class="skills-container">
+        @for (skill of stacks; track skill) {
+          <span class="skill-tag">{{ skill }}</span>
+        }
+      </div>
+    </div>
+    <div class="description-container">
+      <div class="description-title mb-16">О себе</div>
+      <div class="description">
+        {{
+          profile.description
+            ? profile.description
+            : "Список навыков, который мы обсудили выше, — основа резюме, но не единственная его часть. Также можно рассказать о себе в классическом смысле — этот раздел можно добавить в сопроводительное письмо."
+        }}
+      </div>
     </div>
   </div>
-  <div class="description-container">
-    <div class="description-title mb-16">О себе</div>
-    <div class="description">
-      {{
-        profile.description
-          ? profile.description
-          : "Список навыков, который мы обсудили выше, — основа резюме, но не единственная его часть. Также можно рассказать о себе в классическом смысле — этот раздел можно добавить в сопроводительное письмо."
-      }}
-    </div>
+
+
+  <div class="right-profile-contatiner">
+    <form class="right-profile-contatiner-form">
+      <app-cusotom-input label="Имя" formControlName="name" placeholder="Имя" [value]="profile.firstName"/>
+      <app-cusotom-input label="Фамилия" formControlName="lastName" placeholder="Фамилия" [value]="profile.lastName"/>
+      <div style="grid-column: span 2">
+        <app-cusotom-input label="Telegram username" formControlName="username" placeholder="Telegram username"
+                           [value]="profile.username"/>
+      </div>
+      <div class="about-me">
+        <app-cusotom-input mode="textarea" label="О себе" placeholder="О себе" formControlName="aboutMe"
+                           [value]="profile.description ? profile.description :'Список навыков, который мы обсудили выше, — основа резюме, но не единственная его часть. Также можно рассказать о себе в классическом смысле — этот раздел можно добавить в сопроводительное письмо.'"/>
+      </div>
+    </form>
+
   </div>
-  }
-</div>
-<div class="right-profile-contatiner">
-  <app-cusotom-input label="Имя" formControlName="name" placeholder="Имя" />
-</div>
+}
+

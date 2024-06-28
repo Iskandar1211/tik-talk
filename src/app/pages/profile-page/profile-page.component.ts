@@ -1,4 +1,4 @@
-import { AsyncPipe } from '@angular/common';
+import {AsyncPipe, NgStyle} from '@angular/common';
 import { Component, Signal, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs';
@@ -12,7 +12,7 @@ import { CusotomInputComponent } from "../../common-ui/cusotom-input/cusotom-inp
     standalone: true,
     templateUrl: './profile-page.component.html',
     styleUrl: './profile-page.component.scss',
-    imports: [ProfileHeaderComponent, AsyncPipe, CusotomInputComponent]
+  imports: [ProfileHeaderComponent, AsyncPipe, CusotomInputComponent, NgStyle]
 })
 export class ProfilePageComponent {
   profileService = inject(ProfileService);

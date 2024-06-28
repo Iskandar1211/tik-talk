@@ -8,11 +8,13 @@
 .border-bottom-dashed {
   border-bottom: 1px dashed white;
 }
+
 .skill-title {
   font-size: 18px;
   font-weight: 800;
   line-height: 24px;
 }
+
 .skills-container {
   display: flex;
   flex-wrap: wrap;
@@ -22,6 +24,7 @@
 
 .description-container {
 }
+
 .description-title {
   font-size: 18px;
   font-weight: 800;
@@ -33,7 +36,38 @@
   font-size: 12px;
   line-height: 16px;
 }
+
 .right-profile-contatiner {
   background-color: var(--dark-color);
-  
+  padding: 32px;
+
+}
+
+.right-profile-contatiner-form{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.about-me {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  grid-column: span 2;
+
+  > p {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    color: #FFFFFFBF;
+  }
+
+  > span {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+    color: #fff;
+    padding: 12px 0;
+
+  }
 }
