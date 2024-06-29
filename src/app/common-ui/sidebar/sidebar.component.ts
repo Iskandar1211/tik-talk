@@ -1,12 +1,11 @@
-import { Component, inject } from '@angular/core';
-import { SvgIconComponent } from '../svg-icon/svg-icon.component';
-import { SubscriberCardComponent } from './subscriber-card/subscriber-card.component';
-import { RouterLink } from '@angular/router';
-import { ProfileService } from '../../data/services/profile.service';
-import { AsyncPipe, JsonPipe } from '@angular/common';
-import { Observable, Observer, firstValueFrom } from 'rxjs';
-import { Profile } from '../../data/services/interfaces/profile.interface';
-import { ImgUrlPipe } from '../../helpers/pipes/img-url.pipe';
+import {Component, inject} from '@angular/core';
+import {SvgIconComponent} from '../svg-icon/svg-icon.component';
+import {SubscriberCardComponent} from './subscriber-card/subscriber-card.component';
+import {RouterLink} from '@angular/router';
+import {ProfileService} from '../../data/services/profile.service';
+import {AsyncPipe, JsonPipe} from '@angular/common';
+import { firstValueFrom} from 'rxjs';
+import {ImgUrlPipe} from '../../helpers/pipes/img-url.pipe';
 
 type MenuItems = {
   label: string;

@@ -98,3 +98,32 @@ body {
   font-weight: 400;
   line-height: 20px;
 }
+
+//input styles
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  gap: 4px;
+}
+
+.custom-input-label {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #FFFFFFBF
+}
+
+.custom-input {
+  padding: 12px 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #fff;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
+}
+// =================================
