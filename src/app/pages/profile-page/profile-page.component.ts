@@ -5,7 +5,6 @@ import {switchMap} from 'rxjs';
 import {ProfileHeaderComponent} from '../../common-ui/profile-header/profile-header.component';
 import {ProfileService} from '../../data/services/profile.service';
 import {toObservable} from '../../helpers/toObservable';
-import {CustomInputComponent} from "../../common-ui/cusotom-input/custom-input.component";
 import {ImgUrlPipe} from "../../helpers/pipes/img-url.pipe";
 import {SvgIconComponent} from "../../common-ui/svg-icon/svg-icon.component";
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
@@ -15,7 +14,7 @@ import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/
   standalone: true,
   templateUrl: './profile-page.component.html',
   styleUrl: './profile-page.component.scss',
-  imports: [ProfileHeaderComponent, AsyncPipe, CustomInputComponent, NgStyle, ImgUrlPipe, SvgIconComponent, ReactiveFormsModule]
+  imports: [ProfileHeaderComponent, AsyncPipe, NgStyle, ImgUrlPipe, SvgIconComponent, ReactiveFormsModule]
 })
 export class ProfilePageComponent {
 

@@ -29,7 +29,7 @@
       <div class="input-box">
         <label class="custom-input-label">Имя</label>
         <input
-          placeholder="Имя"
+          placeholder="Введите данные"
           formControlName="firstName"
           class="custom-input"
         />
@@ -37,7 +37,7 @@
       <div class="input-box">
         <label class="custom-input-label">Фамилия</label>
         <input
-          placeholder="Фамилия"
+          placeholder="Введите данные"
           formControlName="lastName"
           class="custom-input"
         />
@@ -45,7 +45,7 @@
       <div style="grid-column: span 2" class="input-box">
         <label class="custom-input-label">Telegram username</label>
         <input
-          placeholder="Telegram username"
+          placeholder="Введите данные"
           formControlName="username"
           class="custom-input"
         />
@@ -54,7 +54,7 @@
         <div class="input-box">
           <label class="custom-input-label">О себе</label>
           <textarea
-            placeholder="О себе"
+            placeholder="Введите данные"
             formControlName="aboutMe"
             class="custom-input"></textarea>
         </div>
@@ -77,7 +77,30 @@
           </div>
         </div>
       </div>
+      <div style="grid-column: span 2; position: relative;" class="input-box">
+        <label class="custom-input-label">Навыки</label>
+        <input
+          placeholder="Введите данные"
+          formControlName="firstName"
+          class="custom-input"
+        />
+        <svg icon="search" class="search-icon-svg"></svg>
+      </div>
     </form>
+    <div class="bottom-tab">
+      <div class="bottom-tab-item">
+        <span>
+          <svg icon="trash"></svg>
+        </span>
+        <span>
+          <svg icon="exit"></svg>
+        </span>
+      </div>
+      <div class="bottom-tab-item">
+        <button class="btn-secondary">Отменить</button>
+        <button class="btn-primary">Сохранить</button>
+      </div>
+    </div>
 
   </div>
 }
