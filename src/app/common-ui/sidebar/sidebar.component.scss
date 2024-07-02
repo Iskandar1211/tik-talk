@@ -10,6 +10,7 @@
   display: grid;
   grid-gap: 8px;
   list-style: none;
+  margin-bottom: 20px;
 }
 
 .menu-item {
@@ -23,6 +24,7 @@
   display: grid;
   grid-template-columns: 16px 1fr max-content;
   grid-gap: 12px;
+  text-decoration: none;
   align-items: center;
   &:hover,
   &:focus-visible {

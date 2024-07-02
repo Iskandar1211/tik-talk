@@ -36,7 +36,7 @@ export class SidebarComponent {
     {
       label: 'Моя страница',
       icon: 'home',
-      link: '',
+      link: '/profile',
     },
     {
       label: 'Чаты',
