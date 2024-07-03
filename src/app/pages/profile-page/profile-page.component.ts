@@ -1,5 +1,5 @@
 import {AsyncPipe, NgStyle} from '@angular/common';
-import {Component, Signal, inject} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {switchMap} from 'rxjs';
 import {ProfileHeaderComponent} from '../../common-ui/profile-header/profile-header.component';

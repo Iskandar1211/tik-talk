@@ -26,16 +26,21 @@
   grid-gap: 12px;
   text-decoration: none;
   align-items: center;
+
+  &.active-link,
   &:hover,
   &:focus-visible {
     background: var(--dark-hover-color);
     color: var(--primary-color);
   }
 
+
+
   & > svg {
     width: 16px;
     height: 16px;
   }
+
   & > span {
     font-size: 14px;
     line-height: 24px;
@@ -68,6 +73,7 @@
   align-items: center;
   background-color: #161616;
   justify-content: space-between;
+
   > a > svg {
     width: 14px;
     height: 14px;

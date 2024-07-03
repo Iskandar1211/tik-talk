@@ -10,12 +10,12 @@
       <li>
         @for (menuItem of menuItems; track menuItem.label) {
           @if (menuItem.label === 'Моя страница') {
-            <a [routerLink]="[menuItem.link, 'me']" class="menu-item">
+            <a [routerLink]="[menuItem.link, 'me']" routerLinkActive="active-link"  class="menu-item">
               <svg [icon]="menuItem.icon"></svg>
               <span>{{ menuItem.label }}</span>
             </a>
           } @else {
-            <a [routerLink]="menuItem.label" class="menu-item">
+            <a [routerLink]="menuItem.link" routerLinkActive="active-link"  class="menu-item">
               <svg [icon]="menuItem.icon"></svg>
               <span>{{ menuItem.label }}</span>
             </a>

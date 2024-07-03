@@ -1,7 +1,7 @@
 import {Component, inject} from '@angular/core';
 import {SvgIconComponent} from '../svg-icon/svg-icon.component';
 import {SubscriberCardComponent} from './subscriber-card/subscriber-card.component';
-import {RouterLink} from '@angular/router';
+import {Router, RouterLink, RouterLinkActive} from '@angular/router';
 import {ProfileService} from '../../data/services/profile.service';
 import {AsyncPipe, JsonPipe} from '@angular/common';
 import { firstValueFrom} from 'rxjs';
@@ -25,12 +25,14 @@ type MenuItems = {
     AsyncPipe,
     JsonPipe,
     ImgUrlPipe,
+    RouterLinkActive,
   ],
 })
 export class SidebarComponent {
   profileService = inject(ProfileService);
   subscribers$ = this.profileService.getSubscribersShortList();
   me = this.profileService.me;
+  router = inject(Router)
 
   menuItems: MenuItems[] = [
     {
@@ -41,7 +43,7 @@ export class SidebarComponent {
     {
       label: 'Чаты',
       icon: 'chat',
-      link: '/chat',
+      link: '/chats',
     },
     {
       label: 'Поиск',
