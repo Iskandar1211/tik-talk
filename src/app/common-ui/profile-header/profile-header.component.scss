@@ -1,15 +1,38 @@
-:host {
+.profile-header-container {
   display: grid;
   grid-template-columns: 112px 1fr;
   grid-gap: 24px;
+  align-items: center;
+}
+.profile-header-container-my-page{
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  align-items: center;
 }
 
-img {
+.header-avatar {
   height: 112px;
   width: 112px;
   border-radius: 50%;
 }
 
+.header-avatar-profile{
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+}
+
+.username{
+  display: flex;
+  gap: 10px;
+}
+
 .username-and-name {
   text-align: left;
+}
+
+.username-and-name-my-page{
+  display: flex;
+  gap: 24px;
+  align-items: center;
 }
