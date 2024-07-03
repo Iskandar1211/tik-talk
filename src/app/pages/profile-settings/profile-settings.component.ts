@@ -8,7 +8,6 @@ import {ProfileService} from "../../data/services/profile.service";
 import {ActivatedRoute} from "@angular/router";
 import {toObservable} from "../../helpers/toObservable";
 import {switchMap} from "rxjs";
-import {Profile} from "../../data/services/interfaces/profile.interface";
 
 @Component({
   selector: 'app-profile-settings',
@@ -46,13 +45,16 @@ export class ProfileSettingsComponent {
   );
 
   ngOnInit() {
-    const profile = this.profileService.me()
-    this.profileForm.patchValue({
-      firstName: profile?.firstName,
-      lastName: profile?.lastName,
-      username: profile?.username,
-      description:profile?.description
-    })
-
+    this.me$.subscribe(profile => {
+      if (profile) {
+        this.profileForm.patchValue({
+          firstName: profile.firstName,
+          lastName: profile.lastName,
+          username: profile.username,
+          description: profile.description
+        });
+      }
+    });
   }
+
 }
