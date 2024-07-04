@@ -1,8 +1,8 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable, inject, signal } from '@angular/core';
-import { Profile } from './interfaces/profile.interface';
-import { Pagable } from './interfaces/pageble.interface';
-import { map, tap } from 'rxjs';
+import {HttpClient} from '@angular/common/http';
+import {Injectable, inject, signal} from '@angular/core';
+import {Profile} from './interfaces/profile.interface';
+import {Pagable} from './interfaces/pageble.interface';
+import {map, tap} from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -26,11 +26,15 @@ export class ProfileService {
     return this.http.get<Profile>(`${this.baseApiUrl}account/${id}`);
   }
 
-  getSubscribersShortList(subsAmount:number = 3) {
+  getSubscribersShortList(subsAmount: number = 3) {
     return this.http
       .get<Pagable<Profile>>(
         `${this.baseApiUrl}account/subscribers/?page=1&size=50`
       )
       .pipe(map((res) => res.items.slice(0, subsAmount)));
+  }
+
+  pathProfile(profile: Partial<Profile>) {
+   return  this.http.patch(`${this.baseApiUrl}account/me`, profile)
   }
 }
