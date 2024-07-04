@@ -1,8 +1,37 @@
 @if (profile$ | async; as profile) {
   <div class="profile-header">
     <app-profile-header [profile]="profile" headerType="profile"></app-profile-header>
-    <a [routerLink]="['/profile/settings', 'me']" class="edit-button"><span>Редактировать</span> <svg icon="settings"></svg></a>
+    <a [routerLink]="['/profile/settings', 'me']" class="edit-button"><span>Редактировать</span>
+      <svg icon="settings"></svg>
+    </a>
   </div>
 
+  <main class="profile-page-body">
+    <div></div>
+    <div class="profile-page-body-right-panel">
+      <div class="subscribers-title-box mb-16"><h3 class="h6">Подписчики</h3> <span class="subscriber-length">28</span>
+      </div>
+      <div class="subscriber-wrapper mb-32">
+        @for (subscriber of subscribers$ | async; track subscriber.id) {
+          <a class="subscriber-avatar-btn" [routerLink]="['/profile', subscriber.id]">
+            <img [src]="subscriber.avatarUrl | imgUrl" [alt]="subscriber.firstName">
+          </a>
+        }
+        <a class="to-subscriber-search" [routerLink]="['/search']">
+          <svg icon="plus" class="to-subscriber-search-plus-icon"></svg>
+        </a>
+      </div>
+      <div class="subscribers-title-box mb-16"><h3 class="h6">Навыки</h3>
+      </div>
+      <div class="subscriber-skills-container mb-32">
+        @for (skill of profile.stack; track skill) {
+          <span class="skill-tag">{{ skill }}</span>
+        }
+      </div>
+      <div class="subscribers-title-box mb-16"><h3 class="h6">О себе</h3></div>
+      <div class="subscriber-description">{{profile.description}}</div>
+
+    </div>
+  </main>
 }
 

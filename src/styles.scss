@@ -8,6 +8,7 @@
   --primary-color: #ae7aff;
   --gray-color: #5f646d;
   --dark-hover-color: #161616;
+  --green-primary-color: #98E9AB
 }
 
 *,
@@ -43,6 +44,7 @@ body {
   width: fit-content;
   color: #ae7aff;
 }
+
 .btn {
   border: none;
   background-color: var(--primary-color);
@@ -59,6 +61,7 @@ body {
 
 .btn-shadow {
   position: relative;
+
   &:before {
     content: "";
     position: absolute;
@@ -126,4 +129,5 @@ body {
   border: none;
   border-bottom: 1px solid #fff;
 }
+
 // =================================

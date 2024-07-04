@@ -50,15 +50,85 @@
   gap: 8px;
   border: none;
   cursor: pointer;
+
   > span {
     color: var(--dark-color);
     font-size: 14px;
     line-height: 24px;
     font-weight: 700;
   }
+
   > svg {
     width: 16px;
     height: 16px;
     color: var(--dark-color);
   }
+}
+
+.profile-page-body {
+  display: grid;
+  grid-gap: 64px;
+  grid-template-columns: 1fr 350px;
+}
+
+.profile-page-body-right-panel {
+  padding: 0 24px;
+}
+
+.subscribers-title-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subscriber-length {
+  width: 26px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--green-primary-color);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 700;
+  color: var(--dark-color);
+}
+
+.subscriber-wrapper {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.subscriber-avatar-btn {
+  cursor: pointer;
+
+  > img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+  }
+}
+
+.to-subscriber-search {
+  text-decoration: none;
+}
+
+.to-subscriber-search-plus-icon {
+  width: 16px;
+  height: 16px;
+  color: white;
+}
+
+.subscriber-skills-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.subscriber-description {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--light-color);
 }
