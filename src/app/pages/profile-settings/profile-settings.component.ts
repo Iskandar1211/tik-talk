@@ -1,6 +1,6 @@
 import {Component, inject} from '@angular/core';
 import {AsyncPipe} from "@angular/common";
-import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {ImgUrlPipe} from "../../helpers/pipes/img-url.pipe";
 import {ProfileHeaderComponent} from "../../common-ui/profile-header/profile-header.component";
 import {SvgIconComponent} from "../../common-ui/svg-icon/svg-icon.component";
@@ -24,12 +24,14 @@ import {switchMap} from "rxjs";
   styleUrl: './profile-settings.component.scss'
 })
 export class ProfileSettingsComponent {
-  profileForm = new FormGroup({
-    firstName: new FormControl('', Validators.required),
-    lastName: new FormControl('', Validators.required),
-    username: new FormControl('', Validators.required),
-    description: new FormControl('', Validators.required),
+  formBuilder = inject(FormBuilder)
 
+  profileForm = this.formBuilder.group({
+    firstName: ['', Validators.required],
+    lastName: ['', Validators.required],
+    username: ['', Validators.required],
+    description: [''],
+    stack: ['']
   })
 
   profileService = inject(ProfileService);
