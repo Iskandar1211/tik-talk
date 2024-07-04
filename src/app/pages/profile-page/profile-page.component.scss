@@ -1,8 +1,8 @@
-:host {
-  display: grid;
-  grid-template-columns: 0.5fr 1fr;
-  grid-gap: 48px;
-  padding: 24px;
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .border-bottom-dashed {
@@ -35,4 +35,30 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
+}
+
+.edit-button {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  width: 174px;
+  height: 44px;
+  margin-right: 142px;
+  border-radius: 2px;
+  background-color: var(--primary-color);
+  padding: 10px 20px;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+  > span {
+    color: var(--dark-color);
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 700;
+  }
+  > svg {
+    width: 16px;
+    height: 16px;
+    color: var(--dark-color);
+  }
 }
