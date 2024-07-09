@@ -21,6 +21,10 @@
   justify-content: center;
   height: 100%;
 
+  &.fileover {
+    border: 1px dashed var(--primary-color);
+  }
+
   > p {
     font-size: 14px;
     font-weight: 500;
@@ -36,4 +40,8 @@
   width: 18px;
   height: 18px;
   color: var(--light-color);
+}
+
+.avatar-input {
+  display: none;
 }
