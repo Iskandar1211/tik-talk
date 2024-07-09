@@ -15,6 +15,6 @@ export class ProfileHeaderComponent {
   @Input() headerType: "profile" | 'profile-settings' = 'profile-settings'
 
   ngOnInit() {
-    console.log('profile', this.profile());
+
   }
 }

@@ -1,4 +1,4 @@
-import {Component, effect, inject} from '@angular/core';
+import {Component, effect, inject, ViewChild} from '@angular/core';
 import {AsyncPipe} from "@angular/common";
 import {FormBuilder, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {ImgUrlPipe} from "../../helpers/pipes/img-url.pipe";
@@ -41,6 +41,8 @@ export class ProfileSettingsComponent {
   me$ = toObservable(this.profileService.me);
   stacks:string[] = []
 
+  @ViewChild(AvatarUploadComponent) avatarUploader!: AvatarUploadComponent;
+
   profile$ = this.route.params.pipe(
     switchMap(({id}) => {
       if (id === 'me') return this.me$;
@@ -71,6 +73,9 @@ export class ProfileSettingsComponent {
 
     if(this.profileForm.invalid) return
 
+    if(this.avatarUploader.avatar){
+     firstValueFrom(this.profileService.uploadAvatar(this.avatarUploader.avatar))
+    }
 
     firstValueFrom(this.profileService.pathProfile({
       // @ts-ignore
