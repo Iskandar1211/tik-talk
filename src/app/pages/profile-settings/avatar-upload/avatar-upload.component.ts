@@ -13,7 +13,7 @@ import {ImgUrlPipe} from "../../../helpers/pipes/img-url.pipe";
 })
 export class AvatarUploadComponent {
   @Input({required: true}) avatarUrl!: string
-  preview = signal<string>('/assets/imgs/user-default.png')
+  preview = signal<string>('')
   avatar:File | null = null
 
   fileBrouserHandler(event: Event) {
@@ -36,6 +36,8 @@ export class AvatarUploadComponent {
   }
 
   ngOnInit(): void {
-    this.preview.set(this.avatarUrl)
+    if(!this.avatarUrl){
+      this.preview.set('/assets/imgs/user-default.png')
+    }
   }
 }

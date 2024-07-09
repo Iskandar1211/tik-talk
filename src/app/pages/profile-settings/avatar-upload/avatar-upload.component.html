@@ -1,5 +1,5 @@
 <div class="avatar-container-image-box">
-  @if (avatarUrl) {
+  @if (avatarUrl && !preview()) {
     <img [src]="avatarUrl | imgUrl" alt="avatar" class="avatar-container-image"/>
   } @else {
     <img
