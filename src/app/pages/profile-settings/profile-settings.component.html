@@ -22,7 +22,6 @@
     </div>
   </div>
 
-
   <div class="right-profile-contatiner">
     <form class="right-profile-contatiner-form" [formGroup]="profileForm" (change)="onSave()">
       <div class="input-box">
@@ -61,21 +60,7 @@
       </div>
       <div class="avatar-container">
         <span class="avatar-container-title">Аватарка</span>
-        <div class="avatar-container-image-box">
-          @if (profile.avatarUrl) {
-            <img [src]="profile.avatarUrl | imgUrl" alt="" class="avatar-container-image"/>
-          } @else {
-            <img
-              src="/assets/imgs/user-default.png"
-              alt="img"
-              class="avatar-container-image"
-            />
-          }
-          <div class="avatar-download-box">
-            <svg icon="cloud-arrow-up" class="cloud-arrow-up"></svg>
-            <p>Перетащите изображение или <span>Загрузите</span> (разрешение до 5,000 x 5,000 px)</p>
-          </div>
-        </div>
+        <app-avatar-upload [avatarUrl]="profile.avatarUrl"></app-avatar-upload>
       </div>
       <div style="grid-column: span 2; position: relative;" class="input-box">
         <label class="custom-input-label">Навыки</label>

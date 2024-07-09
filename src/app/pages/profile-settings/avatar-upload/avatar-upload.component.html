@@ -1,0 +1,15 @@
+<div class="avatar-container-image-box">
+  @if (avatarUrl) {
+    <img [src]="avatarUrl" alt="" class="avatar-container-image"/>
+  } @else {
+    <img
+      src="/assets/imgs/user-default.png"
+      alt="img"
+      class="avatar-container-image"
+    />
+  }
+  <div class="avatar-download-box">
+    <svg icon="cloud-arrow-up" class="cloud-arrow-up"></svg>
+    <p>Перетащите изображение или <span>Загрузите</span> (разрешение до 5,000 x 5,000 px)</p>
+  </div>
+</div>

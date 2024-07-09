@@ -8,6 +8,7 @@ import {ProfileService} from "../../data/services/profile.service";
 import {ActivatedRoute} from "@angular/router";
 import {toObservable} from "../../helpers/toObservable";
 import {firstValueFrom, switchMap} from "rxjs";
+import {AvatarUploadComponent} from "./avatar-upload/avatar-upload.component";
 
 @Component({
   selector: 'app-profile-settings',
@@ -18,7 +19,8 @@ import {firstValueFrom, switchMap} from "rxjs";
     ImgUrlPipe,
     ProfileHeaderComponent,
     ReactiveFormsModule,
-    SvgIconComponent
+    SvgIconComponent,
+    AvatarUploadComponent
   ],
   templateUrl: './profile-settings.component.html',
   styleUrl: './profile-settings.component.scss'
